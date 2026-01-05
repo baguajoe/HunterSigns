@@ -1,3 +1,473 @@
 /* 
     General Styles used on every website (Don't Repeat Yourself)
 */
+/* 
+    Hunter Signs - Modern Dark Theme
+    Primary: #D4A017 (Gold)
+    Background: #0a0a0a, #121212, #1a1a1a
+    Text: #ffffff, #b0b0b0
+*/
+
+/* ===== CSS Variables ===== */
+:root {
+    --primary: #D4A017;
+    --primary-hover: #b8860b;
+    --primary-light: rgba(212, 160, 23, 0.1);
+    --bg-dark: #0a0a0a;
+    --bg-card: #1a1a1a;
+    --bg-card-hover: #242424;
+    --bg-glass: rgba(26, 26, 26, 0.8);
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --text-muted: #707070;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --shadow-glow: 0 0 30px rgba(212, 160, 23, 0.2);
+    --transition: all 0.3s ease;
+}
+
+/* ===== Base Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ===== Typography ===== */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.25rem; }
+
+p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--primary-hover);
+}
+
+/* ===== Buttons ===== */
+.btn-primary-custom {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+    color: #000;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn-primary-custom:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-glow);
+    color: #000;
+}
+
+.btn-outline-custom {
+    background: transparent;
+    color: var(--primary);
+    padding: 12px 32px;
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn-outline-custom:hover {
+    background: var(--primary);
+    color: #000;
+    transform: translateY(-3px);
+}
+
+/* ===== Cards - Glassmorphism ===== */
+.glass-card {
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 24px;
+    transition: var(--transition);
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: var(--shadow-glow);
+}
+
+/* ===== Image Cards ===== */
+.image-card {
+    background: var(--bg-card);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+}
+
+.image-card:hover {
+    transform: scale(1.03);
+    box-shadow: var(--shadow-glow);
+    border-color: var(--primary);
+}
+
+.image-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.image-card:hover img {
+    transform: scale(1.05);
+}
+
+/* ===== Sections ===== */
+.section {
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    color: var(--text-primary);
+    position: relative;
+    display: inline-block;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+.section-title p {
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 20px auto 0;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(135deg, var(--bg-dark) 0%, #1a1a1a 100%);
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(212, 160, 23, 0.1) 0%, transparent 70%);
+    animation: pulse 8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.2); opacity: 0.8; }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin-bottom: 2rem;
+}
+
+/* ===== Navbar ===== */
+.navbar-dark-custom {
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 0;
+    transition: var(--transition);
+}
+
+.navbar-dark-custom.scrolled {
+    padding: 10px 0;
+    box-shadow: var(--shadow);
+}
+
+/* ===== Footer ===== */
+.footer-dark {
+    background: #0a0a0a;
+    border-top: 1px solid var(--border-color);
+    padding: 60px 0 30px;
+}
+
+.footer-dark h5 {
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.footer-dark p,
+.footer-dark li,
+.footer-dark a {
+    color: var(--text-secondary);
+}
+
+.footer-dark a:hover {
+    color: var(--primary);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--border-color);
+    padding-top: 30px;
+    margin-top: 40px;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+/* ===== Accordion Dark ===== */
+.accordion-dark .accordion-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px !important;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.accordion-dark .accordion-button {
+    background: var(--bg-card);
+    color: var(--text-primary);
+    font-weight: 600;
+    padding: 20px 25px;
+    box-shadow: none;
+}
+
+.accordion-dark .accordion-button:not(.collapsed) {
+    background: var(--bg-card-hover);
+    color: var(--primary);
+}
+
+.accordion-dark .accordion-button::after {
+    filter: invert(1);
+}
+
+.accordion-dark .accordion-body {
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    padding: 20px 25px;
+}
+
+/* ===== Form Styles ===== */
+.form-dark .form-control,
+.form-dark .form-select {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 12px 16px;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.form-dark .form-control:focus,
+.form-dark .form-select:focus {
+    background: var(--bg-card);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-light);
+    color: var(--text-primary);
+}
+
+.form-dark .form-control::placeholder {
+    color: var(--text-muted);
+}
+
+.form-dark .form-label {
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+/* ===== Sidebar ===== */
+.sidebar-dark {
+    background: var(--bg-card);
+    border-right: 1px solid var(--border-color);
+}
+
+.sidebar-dark .nav-link {
+    color: var(--text-secondary);
+    border-radius: 8px;
+    margin-bottom: 5px;
+    transition: var(--transition);
+}
+
+.sidebar-dark .nav-link:hover,
+.sidebar-dark .nav-link.active {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+/* ===== Lightbox ===== */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.lightbox-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    position: relative;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 85vh;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.lightbox-close:hover {
+    color: var(--primary);
+}
+
+/* ===== Animations ===== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+    
+    .btn-primary-custom,
+    .btn-outline-custom {
+        padding: 10px 24px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bg-card);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
+/* ===== Selection ===== */
+::selection {
+    background: var(--primary);
+    color: #000;
+}

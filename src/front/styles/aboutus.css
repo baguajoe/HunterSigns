@@ -1,0 +1,100 @@
+/* About + Team full width sections */
+/* Force full-width on outer sections */
+.about-us,
+.team-section {
+  width: 100vw !important;
+  margin: 0 !important;
+  padding: 60px 0;
+  background-color: #f8f9fc;
+  overflow-x: hidden;
+}
+
+/* Force inner container to expand */
+.about-us .container,
+.team-section .container {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 30px !important;
+}
+
+/* Ensure modal takes full screen */
+.modal {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  background-color: rgba(0, 0, 0, 0.85) !important;
+  z-index: 9999 !important;
+  overflow: hidden !important;
+}
+
+/* Section Titles */
+.section-title {
+  color: #007bff;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.section-description {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* Cards */
+.card {
+  border: none;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  background: #fff;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-top {
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+  object-fit: cover;
+  height: 200px;
+  width: 100%;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  color: #343a40;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Modal styles */
+.modal-content-wrapper {
+  background-color: #1a1a1a;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 900px;
+}
+
+.modal-image-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.modal-image-bio {
+  font-size: 1rem;
+  color: #ccc;
+}

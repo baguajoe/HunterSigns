@@ -1,0 +1,105 @@
+/* General Body Styles */
+body {
+    background: #ffffff; 
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    min-height: 100vh; /* Ensures gradient covers full page */
+}
+
+/* General Container Styles */
+.container {
+    background: #8697C4; /* White Text */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced Shadow for Depth */
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+header h1 {
+    color: #ffffff; /* White for Trust */
+    font-weight: 800;
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #FFFFFF; /* White Text for readability over blue */
+    line-height: 1.8;
+}
+
+/* Service Cards */
+.card {
+    background-color: #ffffff; /* White Text */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slight Zoom on Hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced Shadow */
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #FFFFFF; /* White Text for contrast */
+    line-height: 1.5;
+    color: #FFFFFF; /* White Text */
+}
+
+.card-body p strong {
+    color: #FFD700; /* Golden Yellow for Emphasis */
+}
+
+/* Image Placeholder */
+.card .card-img-top {
+    background-color: #FFD700 !important; /* Golden Yellow */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    font-size: 1.2rem;
+    color: #FFFFFF; /* White Text */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 1rem;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .card-body p {
+        font-size: 0.8rem;
+    }
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+}
